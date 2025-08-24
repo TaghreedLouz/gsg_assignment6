@@ -1,11 +1,15 @@
 
 import 'package:flutter/material.dart';
+import 'package:gsg_assignment6/widgets/rate_widget.dart';
 
 class TopRatedFreelancesContainerWidget extends StatelessWidget {
   String? img;
+  String? name;
+  String? jobTitle;
+  final double rate;
 
 
-  TopRatedFreelancesContainerWidget({required this.img});
+  TopRatedFreelancesContainerWidget({required this.img, required this.rate, required this.name, required this.jobTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +34,14 @@ class TopRatedFreelancesContainerWidget extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Wade Warren",
+                  "$name",
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.black87,
                   ),
                 ),
                 Text(
-                  "Beautician",
+                  "$jobTitle",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -45,27 +49,7 @@ class TopRatedFreelancesContainerWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 8),
-                Container(
-                  padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Color(0xff827BEB).withOpacity(0.12),
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children:  [
-                      Image.asset("assets/star.png"),
-                      SizedBox(width: 4),
-                      Text(
-                        "4.9",
-                        style: TextStyle(
-                          color: Colors.black87,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                RateWidget(rate: rate),
               ],
             ),
           ),
