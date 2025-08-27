@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:gsg_assignment6/widgets/rate_widget.dart';
 
 class TopServicesStack extends StatelessWidget {
-  const TopServicesStack({super.key, required this.serviceImg, required this.userImg});
+  const TopServicesStack(
+      {super.key, required this.serviceImg, required this.userImg});
+
   final String serviceImg;
   final String userImg;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 15),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 15),
       child: Align(
         alignment: Alignment.centerLeft,
         child: Stack(
@@ -37,35 +40,64 @@ class TopServicesStack extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                  Image.asset("$userImg"),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
-                    child: SizedBox(
-                      width: 140,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                        Text("Miss Zachary Will",style: TextStyle(fontWeight: FontWeight.bold,)),
-                          SizedBox(height: 3,),
-                          Text("Beautician",style: TextStyle(color: Color(0xff827BEB),fontSize: 12)),
-                          SizedBox(height: 3,),
-                          Text("'Doloribus saepe aut necessit qui non qui.'",style: TextStyle(color: Color(0xff6B6B6B),fontSize: 10)),
-                          Row(children: [
-                          RateWidget(rate: 3.5),
-                          SizedBox(width: 3,),
-                          ElevatedButton(onPressed: () {}, child: Text("Book Now"),style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Color(0xff827BEB)),
-                            textStyle: MaterialStateProperty.all(TextStyle(fontSize: 11),),
-                            shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),)
-                              ),),),
-                        ],)
-                      ],),
-                    ),
-                  ),
-                ]),
+                      Image.asset("$userImg"),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8),
+                        child: SizedBox(
+                          width: 140,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Miss Zachary Will",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  )),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text("Beautician",
+                                  style: TextStyle(
+                                      color: Color(0xff827BEB), fontSize: 12)),
+                              SizedBox(
+                                height: 3,
+                              ),
+                              Text(
+                                  "'Doloribus saepe aut necessit qui non qui.'",
+                                  style: TextStyle(
+                                      color: Color(0xff6B6B6B), fontSize: 10)),
+                              Row(
+                                children: [
+                                  RateWidget(rate: 3.5),
+                                  SizedBox(
+                                    width: 3,
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () {},
+                                    child: Text("Book Now"),
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all(
+                                              Color(0xff827BEB)),
+                                      textStyle: MaterialStateProperty.all(
+                                        TextStyle(fontSize: 11),
+                                      ),
+                                      shape: MaterialStateProperty.all(
+                                          RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      )),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ]),
               ),
             ),
           ],

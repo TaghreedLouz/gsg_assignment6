@@ -8,14 +8,14 @@ class RateWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding:  EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
         color: Color(0xff827BEB).withOpacity(0.12),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children:  [
+        children: [
           Image.asset("assets/star.png"),
           SizedBox(width: 4),
           Text(

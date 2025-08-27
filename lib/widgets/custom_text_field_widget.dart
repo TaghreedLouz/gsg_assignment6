@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
-
   CustomTextFieldWidget(
-      {this.hint, this.isPassword= false, required this.controller, this.validate});
+      {this.hint,
+      this.isPassword = false,
+      required this.controller,
+      this.validate});
 
   final String? hint;
   final bool isPassword;
@@ -21,7 +23,8 @@ class CustomTextFieldWidget extends StatelessWidget {
         decoration: InputDecoration(
           border: OutlineInputBorder(),
           hintText: hint,
-        ),),
+        ),
+      ),
     );
   }
 }

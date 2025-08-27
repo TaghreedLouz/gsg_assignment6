@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class TitleWidget extends StatelessWidget {
   String? title;
 
-
   TitleWidget({required this.title});
 
   @override
@@ -33,7 +32,8 @@ class TitleWidget extends StatelessWidget {
           onPressed: () {},
           child: Text(
             "View All",
-            style: TextStyle(decoration: TextDecoration.underline,color: Color(0xff154883)),
+            style: TextStyle(
+                decoration: TextDecoration.underline, color: Color(0xff154883)),
           ),
         ),
       ],

@@ -4,6 +4,7 @@ import 'package:gsg_assignment6/widgets/custom_text_field_widget.dart';
 
 class SignupScreen extends StatelessWidget {
   SignupScreen({super.key});
+
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
@@ -14,9 +15,12 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(centerTitle: true,title: Text("Signup",style: TextStyle(color: Colors.black)),backgroundColor: Colors.white),
+      appBar: AppBar(
+          centerTitle: true,
+          title: Text("Signup", style: TextStyle(color: Colors.black)),
+          backgroundColor: Colors.white),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 6,horizontal: 30),
+        padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 30),
         child: Center(
           child: Form(
             key: _formKey,
@@ -57,8 +61,7 @@ class SignupScreen extends StatelessWidget {
                   controller: confirmPasswordController,
                   validate: (confirmPassword) {
                     if (confirmPassword == passwordController.text &&
-                        confirmPassword!.isNotEmpty)
-                      return null;
+                        confirmPassword!.isNotEmpty) return null;
                     return "Password must match";
                   },
                 ),
