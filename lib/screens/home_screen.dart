@@ -36,7 +36,6 @@ class HomeScreen extends StatelessWidget {
   ];
 
 
-
   @override
   Widget build(BuildContext context) {
     final String? email = ModalRoute.of(context)!.settings.arguments as String?;
