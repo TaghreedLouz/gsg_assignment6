@@ -62,7 +62,6 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
-
       appBar: AppBar(
         title: Image.asset("assets/logo.png"),
         actions: [
