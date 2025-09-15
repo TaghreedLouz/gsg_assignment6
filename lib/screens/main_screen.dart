@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gsg_assignment6/routes.dart';
-import 'package:gsg_assignment6/screens/cart_screen.dart';
+import 'package:gsg_assignment6/screens/products_screen.dart';
 import 'package:gsg_assignment6/screens/home_screen.dart';
 
 class MainScreen extends StatefulWidget {
@@ -10,11 +10,8 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
-
-
-
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> screens = [HomeScreen(), CartScreen(), Text("Settings")];
+  List<Widget> screens = [HomeScreen(), ProductsScreen(), Text("Settings")];
   int index = 0;
 
   @override
@@ -40,11 +37,13 @@ class _MainScreenState extends State<MainScreen> {
           ? null
           : AppBar(
               title: Text("My First App"),
+              centerTitle: true,
               backgroundColor: Colors.amber,
               actions: [
-                Icon(Icons.settings),
-                Icon(Icons.shopping_cart),
-                Icon(Icons.home),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(Icons.shopping_cart),
+                ),
               ],
             ),
       body: Center(child: screens[index]),
@@ -58,6 +57,7 @@ class _MainScreenState extends State<MainScreen> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home_outlined),
+
             label: "Home",
             activeIcon: Icon(Icons.home),
           ),
