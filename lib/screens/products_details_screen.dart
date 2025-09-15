@@ -8,8 +8,7 @@ class ProductsDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ProductModel model =
-        ModalRoute.of(context)!.settings.arguments as ProductModel;
+    final ProductModel model = ModalRoute.of(context)!.settings.arguments as ProductModel;
 
     return Scaffold(
       appBar: AppBar(
@@ -70,16 +69,21 @@ class ProductsDetailsScreen extends StatelessWidget {
                         ),
                         Row(
                           mainAxisSize: MainAxisSize.min,
-                          children: List.generate(5, (index) {
-                            return Icon(
-                              index < model.ratingCount
-                                  ? Icons.star
-                                  : Icons.star_border,
-                              color: Colors.orange,
-                              size: 16,
-                            );
-                          }),
+                          children: [
+                            ...List.generate(5, (index) {
+                              return Icon(
+                                index < model.rating
+                                    ? Icons.star
+                                    : Icons.star_border,
+                                color: Colors.orange,
+                                size: 16,
+                              );
+                            }),
+                            const SizedBox(width: 4),
+                            Text('(${model.ratingCount})'),
+                          ],
                         )
+
                       ],
                     ),
                   ],

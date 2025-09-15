@@ -38,9 +38,10 @@ class ProductWidget extends StatelessWidget {
               const Icon(Icons.star, color: Colors.amber, size: 16),
               const SizedBox(width: 4),
               Text(model.rating.toString()),
+              const SizedBox(width: 4),
+              Text('(${model.ratingCount})'),
             ],
           ),
-          Text('(${model.ratingCount})'),
         ],
       ),
     );
